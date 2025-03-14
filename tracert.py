@@ -35,7 +35,7 @@ def build_icmp_message(sequence):
     header = struct.pack("bbHHh", message_type, message_code, socket.htons(checksum_value), identifier, sequence)
     return header + payload
 
-def trace_route(target_ip, max_hops=30, timeout=1, attempts_per_hop=3):
+def tracert(target_ip, max_hops=30, timeout=1, attempts_per_hop=3):
     print(f"Tracing route to {target_ip} with a maximum of {max_hops} hops:")
 
     for hop in range(1, max_hops + 1):
